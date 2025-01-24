@@ -1,0 +1,14 @@
+site_name: My Docs
+
+plugins:
+  # - offline
+- mkdocstrings:
+    handlers:
+      python:
+        paths: [.] 
+nav:
+  - index: index.md
+  
+theme:
+  name: readthedocs
+  highlightjs: false
