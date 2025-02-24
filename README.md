@@ -12,8 +12,8 @@ TODO:
 
 - [ ] create 'utils' module with functions used in the `Fastapimkdocs` class init.
 - [ ] add '.json' file extension in the docs route file extension list.
-- [ ] Give the `setup_application` ~more~ any optional arguments.
-- [ ] Write some more docstrings/comments for the examples provided.
+- [x] Give the `setup_application` ~more~ any optional arguments.
+- [x] Write some more docstrings/comments for the examples provided.
 - [ ] add site to repo.
 - [ ] create pre-commit hook to build this packages own docs.
 - [ ] add some tests.
