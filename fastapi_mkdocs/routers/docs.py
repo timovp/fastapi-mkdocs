@@ -1,9 +1,16 @@
+"""FastAPI MkDocs Router."""
+
 from fastapi import APIRouter, Request
 from fastapi.responses import FileResponse, Response
 from fastapi.templating import Jinja2Templates
 
 
 class FastAPIMkDocs:
+    """FastAPI MkDocs Router.
+
+    See example.py for usage.
+    """
+
     def __init__(
         self,
         doc_route: str | None = "documentation",
