@@ -8,6 +8,3 @@ wheels/
 
 # Virtual environments
 .venv
-
-# we don't want the side added, atleast for now. We plan to generate it on the fly.
-site

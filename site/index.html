@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>My Docs</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link href="assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "index";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]--> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> My Docs
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">index</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">My Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">index</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="doc doc-object doc-module">
+
+
+
+<a id="fastapi_mkdocs.core"></a>
+    <div class="doc doc-contents first">
+
+        <p>fastapi-mkdocs, a helper package that adds routers for your mkdocs.</p>
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="fastapi_mkdocs.core.setup_application" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">setup_application</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">docs_route</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Adjust settings on a FastAPI <code>app</code> object and add routes.</p>
+<p>Adds a FastAPI MkDocs router to the FastAPI <code>app</code> object.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>app</code></b>
+                  (<code><span title="fastapi.FastAPI">FastAPI</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>The FastAPI app object.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>docs_route</code></b>
+                  (<code>str | None</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>The route to the documentation, if none provided,</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+            <details class="quote">
+              <summary>Source code in <code>fastapi_mkdocs/core.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">setup_application</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">docs_route</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adjust settings on a FastAPI `app` object and add routes.</span>
+
+<span class="sd">    Adds a FastAPI MkDocs router to the FastAPI `app` object.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        app (FastAPI): The FastAPI app object.</span>
+<span class="sd">        docs_route (str | None): The route to the documentation, if none provided,</span>
+<span class="sd">        it will be at the root. Defaults to &quot;documentation&quot;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">extra_routers</span> <span class="o">=</span> <span class="n">FastAPIMkDocs</span><span class="p">(</span><span class="n">docs_route</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">include_router</span><span class="p">(</span><span class="n">extra_routers</span><span class="o">.</span><span class="n">router</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="fastapi_mkdocs.routers"></a>
+    <div class="doc doc-contents first">
+
+        <p>Add routers to FastAPI app.</p>
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="fastapi_mkdocs.routers.docs"></a>
+    <div class="doc doc-contents first">
+
+        <p>FastAPI MkDocs Router.</p>
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="fastapi_mkdocs.routers.docs.FastAPIMkDocs" class="doc doc-heading">
+            <code>FastAPIMkDocs</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>FastAPI MkDocs Router.</p>
+<p>See example.py for usage.</p>
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>fastapi_mkdocs/routers/docs.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span>
+<span class="normal">96</span>
+<span class="normal">97</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">FastAPIMkDocs</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;FastAPI MkDocs Router.</span>
+
+<span class="sd">    See example.py for usage.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">doc_route</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">mkdocs_site_folder</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;./site&quot;</span><span class="p">,</span>
+        <span class="n">mkdocs_favicon_location</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;./site/img/favicon.ico&quot;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the FastAPI MkDocs Router.</span>
+
+<span class="sd">        Initialize the FastAPI MkDocs Router with the provided parameters. Please</span>
+<span class="sd">        note that the default values are set to the default MkDocs site folder and</span>
+<span class="sd">        favicon location. If no doc_route is provided, it will default to the root.</span>
+<span class="sd">        From there no new get-route is needed, the router will handle the rest.</span>
+<span class="sd">        Adding extra routes will not work anymore as the router will handle all</span>
+<span class="sd">        requests to the documentation, which is then located at the site root.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            doc_route (str): The route to the documentation, if none provided, it will</span>
+<span class="sd">            be at the root.</span>
+<span class="sd">            mkdocs_site_folder (str): The location of the gerenated MkDocs site-folder.</span>
+<span class="sd">            Defaults to &quot;./site&quot;.</span>
+<span class="sd">            mkdocs_favicon_location (str): The location of the favicon of the MkDocs</span>
+<span class="sd">            site. Defaults to &quot;./site/img/favicon.ico&quot;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">templates_docs</span> <span class="o">=</span> <span class="n">Jinja2Templates</span><span class="p">(</span><span class="n">mkdocs_site_folder</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">router</span> <span class="o">=</span> <span class="n">APIRouter</span><span class="p">()</span>
+        <span class="n">media_type_map</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;.css&quot;</span><span class="p">:</span> <span class="s2">&quot;text/css&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;.js&quot;</span><span class="p">:</span> <span class="s2">&quot;text/javascript&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;.png&quot;</span><span class="p">:</span> <span class="s2">&quot;image/png&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;.ico&quot;</span><span class="p">:</span> <span class="s2">&quot;image/x-icon&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;.svg&quot;</span><span class="p">:</span> <span class="s2">&quot;image/svg+xml&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;.jpeg&quot;</span><span class="p">:</span> <span class="s2">&quot;image/jpeg&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;.woff&quot;</span><span class="p">:</span> <span class="s2">&quot;font/woff&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;.woff2&quot;</span><span class="p">:</span> <span class="s2">&quot;font/woff2&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;.ttf&quot;</span><span class="p">:</span> <span class="s2">&quot;font/ttf&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="n">doc_route</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">doc_route</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">doc_route</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">):</span>
+            <span class="n">doc_route</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">doc_route</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;fastapi&quot;</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;doc_route should not start with a /.&quot;</span><span class="p">)</span>
+
+        <span class="nd">@self</span><span class="o">.</span><span class="n">router</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">doc_route</span><span class="si">}</span><span class="s2">/&quot;</span> <span class="o">+</span> <span class="s2">&quot;{file_path:path}&quot;</span><span class="p">)</span>
+        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">documentation</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Return the requested documentation other than default html files.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                request (Request): The request object coming in from the client.</span>
+<span class="sd">                file_path (str): The path to the file to render.</span>
+
+<span class="sd">            Raises:</span>
+<span class="sd">                ValueError: When a file type or a path is not recognized.</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                Response: A response object containing the rendered file.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">file_path</span><span class="p">:</span>
+                <span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;index.html&quot;</span>
+            <span class="k">elif</span> <span class="n">file_path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">):</span>
+                <span class="n">file_path</span> <span class="o">+=</span> <span class="s2">&quot;index.html&quot;</span>
+
+            <span class="k">if</span> <span class="n">file_path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.html&quot;</span><span class="p">):</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">templates_docs</span><span class="o">.</span><span class="n">TemplateResponse</span><span class="p">(</span>
+                    <span class="n">request</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;request&quot;</span><span class="p">:</span> <span class="n">request</span><span class="p">},</span> <span class="n">media_type</span><span class="o">=</span><span class="s2">&quot;text/html&quot;</span>
+                <span class="p">)</span>
+            <span class="n">extension</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">ext</span> <span class="k">for</span> <span class="n">ext</span> <span class="ow">in</span> <span class="n">media_type_map</span> <span class="k">if</span> <span class="n">file_path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">ext</span><span class="p">)),</span> <span class="kc">None</span>
+            <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">extension</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">FileResponse</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;./site/</span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">media_type</span><span class="o">=</span><span class="n">media_type_map</span><span class="p">[</span><span class="n">extension</span><span class="p">]</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown file type: </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="nd">@self</span><span class="o">.</span><span class="n">router</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/favicon.ico&quot;</span><span class="p">)</span>
+        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">read_favicon</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">FileResponse</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Returns the favicon incase it&#39;s needed.&quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="n">FileResponse</span><span class="p">(</span><span class="n">mkdocs_favicon_location</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="fastapi_mkdocs.routers.docs.FastAPIMkDocs.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">doc_route</span><span class="p">,</span> <span class="n">mkdocs_site_folder</span><span class="o">=</span><span class="s1">&#39;./site&#39;</span><span class="p">,</span> <span class="n">mkdocs_favicon_location</span><span class="o">=</span><span class="s1">&#39;./site/img/favicon.ico&#39;</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize the FastAPI MkDocs Router.</p>
+<p>Initialize the FastAPI MkDocs Router with the provided parameters. Please
+note that the default values are set to the default MkDocs site folder and
+favicon location. If no doc_route is provided, it will default to the root.
+From there no new get-route is needed, the router will handle the rest.
+Adding extra routes will not work anymore as the router will handle all
+requests to the documentation, which is then located at the site root.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>doc_route</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The route to the documentation, if none provided, it will</p>
+              </div>
+            </li>
+            <li>
+              <b><code>mkdocs_site_folder</code></b>
+                  (<code>str</code>, default:
+                      <code>&#39;./site&#39;</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>The location of the gerenated MkDocs site-folder.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>mkdocs_favicon_location</code></b>
+                  (<code>str</code>, default:
+                      <code>&#39;./site/img/favicon.ico&#39;</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>The location of the favicon of the MkDocs</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+            <details class="quote">
+              <summary>Source code in <code>fastapi_mkdocs/routers/docs.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span>
+<span class="normal">96</span>
+<span class="normal">97</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">doc_route</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">mkdocs_site_folder</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;./site&quot;</span><span class="p">,</span>
+    <span class="n">mkdocs_favicon_location</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;./site/img/favicon.ico&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize the FastAPI MkDocs Router.</span>
+
+<span class="sd">    Initialize the FastAPI MkDocs Router with the provided parameters. Please</span>
+<span class="sd">    note that the default values are set to the default MkDocs site folder and</span>
+<span class="sd">    favicon location. If no doc_route is provided, it will default to the root.</span>
+<span class="sd">    From there no new get-route is needed, the router will handle the rest.</span>
+<span class="sd">    Adding extra routes will not work anymore as the router will handle all</span>
+<span class="sd">    requests to the documentation, which is then located at the site root.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        doc_route (str): The route to the documentation, if none provided, it will</span>
+<span class="sd">        be at the root.</span>
+<span class="sd">        mkdocs_site_folder (str): The location of the gerenated MkDocs site-folder.</span>
+<span class="sd">        Defaults to &quot;./site&quot;.</span>
+<span class="sd">        mkdocs_favicon_location (str): The location of the favicon of the MkDocs</span>
+<span class="sd">        site. Defaults to &quot;./site/img/favicon.ico&quot;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">templates_docs</span> <span class="o">=</span> <span class="n">Jinja2Templates</span><span class="p">(</span><span class="n">mkdocs_site_folder</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">router</span> <span class="o">=</span> <span class="n">APIRouter</span><span class="p">()</span>
+    <span class="n">media_type_map</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;.css&quot;</span><span class="p">:</span> <span class="s2">&quot;text/css&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;.js&quot;</span><span class="p">:</span> <span class="s2">&quot;text/javascript&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;.png&quot;</span><span class="p">:</span> <span class="s2">&quot;image/png&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;.ico&quot;</span><span class="p">:</span> <span class="s2">&quot;image/x-icon&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;.svg&quot;</span><span class="p">:</span> <span class="s2">&quot;image/svg+xml&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;.jpeg&quot;</span><span class="p">:</span> <span class="s2">&quot;image/jpeg&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;.woff&quot;</span><span class="p">:</span> <span class="s2">&quot;font/woff&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;.woff2&quot;</span><span class="p">:</span> <span class="s2">&quot;font/woff2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;.ttf&quot;</span><span class="p">:</span> <span class="s2">&quot;font/ttf&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="n">doc_route</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">doc_route</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">doc_route</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">):</span>
+        <span class="n">doc_route</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">doc_route</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;fastapi&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;doc_route should not start with a /.&quot;</span><span class="p">)</span>
+
+    <span class="nd">@self</span><span class="o">.</span><span class="n">router</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">doc_route</span><span class="si">}</span><span class="s2">/&quot;</span> <span class="o">+</span> <span class="s2">&quot;{file_path:path}&quot;</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">documentation</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the requested documentation other than default html files.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            request (Request): The request object coming in from the client.</span>
+<span class="sd">            file_path (str): The path to the file to render.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: When a file type or a path is not recognized.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Response: A response object containing the rendered file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">file_path</span><span class="p">:</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;index.html&quot;</span>
+        <span class="k">elif</span> <span class="n">file_path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">):</span>
+            <span class="n">file_path</span> <span class="o">+=</span> <span class="s2">&quot;index.html&quot;</span>
+
+        <span class="k">if</span> <span class="n">file_path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.html&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">templates_docs</span><span class="o">.</span><span class="n">TemplateResponse</span><span class="p">(</span>
+                <span class="n">request</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;request&quot;</span><span class="p">:</span> <span class="n">request</span><span class="p">},</span> <span class="n">media_type</span><span class="o">=</span><span class="s2">&quot;text/html&quot;</span>
+            <span class="p">)</span>
+        <span class="n">extension</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">ext</span> <span class="k">for</span> <span class="n">ext</span> <span class="ow">in</span> <span class="n">media_type_map</span> <span class="k">if</span> <span class="n">file_path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">ext</span><span class="p">)),</span> <span class="kc">None</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">extension</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">FileResponse</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;./site/</span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">media_type</span><span class="o">=</span><span class="n">media_type_map</span><span class="p">[</span><span class="n">extension</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown file type: </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nd">@self</span><span class="o">.</span><span class="n">router</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/favicon.ico&quot;</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">read_favicon</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">FileResponse</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the favicon incase it&#39;s needed.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">FileResponse</span><span class="p">(</span><span class="n">mkdocs_favicon_location</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2025-02-25 07:45:02.982497+00:00
+-->
