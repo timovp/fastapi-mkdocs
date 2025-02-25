@@ -342,10 +342,7 @@
 <span class="normal">91</span>
 <span class="normal">92</span>
 <span class="normal">93</span>
-<span class="normal">94</span>
-<span class="normal">95</span>
-<span class="normal">96</span>
-<span class="normal">97</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">FastAPIMkDocs</span><span class="p">:</span>
+<span class="normal">94</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">FastAPIMkDocs</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;FastAPI MkDocs Router.</span>
 
 <span class="sd">    See example.py for usage.</span>
@@ -367,12 +364,9 @@
 <span class="sd">        requests to the documentation, which is then located at the site root.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            doc_route (str): The route to the documentation, if none provided, it will</span>
-<span class="sd">            be at the root.</span>
-<span class="sd">            mkdocs_site_folder (str): The location of the gerenated MkDocs site-folder.</span>
-<span class="sd">            Defaults to &quot;./site&quot;.</span>
-<span class="sd">            mkdocs_favicon_location (str): The location of the favicon of the MkDocs</span>
-<span class="sd">            site. Defaults to &quot;./site/img/favicon.ico&quot;.</span>
+<span class="sd">            doc_route (str): The route to the documentation, if none provided, it will be at the root.</span>
+<span class="sd">            mkdocs_site_folder (str): The location of the gerenated MkDocs site-folder. Defaults to &quot;./site&quot;.</span>
+<span class="sd">            mkdocs_favicon_location (str): The location of the favicon of the MkDocs site. Defaults to &quot;./site/img/favicon.ico&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">templates_docs</span> <span class="o">=</span> <span class="n">Jinja2Templates</span><span class="p">(</span><span class="n">mkdocs_site_folder</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">router</span> <span class="o">=</span> <span class="n">APIRouter</span><span class="p">()</span>
@@ -483,7 +477,7 @@ requests to the documentation, which is then located at the site root.</p>
                   (<code>str</code>)
               –
               <div class="doc-md-description">
-                <p>The route to the documentation, if none provided, it will</p>
+                <p>The route to the documentation, if none provided, it will be at the root.</p>
               </div>
             </li>
             <li>
@@ -493,7 +487,7 @@ requests to the documentation, which is then located at the site root.</p>
 )
               –
               <div class="doc-md-description">
-                <p>The location of the gerenated MkDocs site-folder.</p>
+                <p>The location of the gerenated MkDocs site-folder. Defaults to "./site".</p>
               </div>
             </li>
             <li>
@@ -503,7 +497,7 @@ requests to the documentation, which is then located at the site root.</p>
 )
               –
               <div class="doc-md-description">
-                <p>The location of the favicon of the MkDocs</p>
+                <p>The location of the favicon of the MkDocs site. Defaults to "./site/img/favicon.ico".</p>
               </div>
             </li>
         </ul>
@@ -591,10 +585,7 @@ requests to the documentation, which is then located at the site root.</p>
 <span class="normal">91</span>
 <span class="normal">92</span>
 <span class="normal">93</span>
-<span class="normal">94</span>
-<span class="normal">95</span>
-<span class="normal">96</span>
-<span class="normal">97</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+<span class="normal">94</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">doc_route</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">mkdocs_site_folder</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;./site&quot;</span><span class="p">,</span>
@@ -610,12 +601,9 @@ requests to the documentation, which is then located at the site root.</p>
 <span class="sd">    requests to the documentation, which is then located at the site root.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        doc_route (str): The route to the documentation, if none provided, it will</span>
-<span class="sd">        be at the root.</span>
-<span class="sd">        mkdocs_site_folder (str): The location of the gerenated MkDocs site-folder.</span>
-<span class="sd">        Defaults to &quot;./site&quot;.</span>
-<span class="sd">        mkdocs_favicon_location (str): The location of the favicon of the MkDocs</span>
-<span class="sd">        site. Defaults to &quot;./site/img/favicon.ico&quot;.</span>
+<span class="sd">        doc_route (str): The route to the documentation, if none provided, it will be at the root.</span>
+<span class="sd">        mkdocs_site_folder (str): The location of the gerenated MkDocs site-folder. Defaults to &quot;./site&quot;.</span>
+<span class="sd">        mkdocs_favicon_location (str): The location of the favicon of the MkDocs site. Defaults to &quot;./site/img/favicon.ico&quot;.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">templates_docs</span> <span class="o">=</span> <span class="n">Jinja2Templates</span><span class="p">(</span><span class="n">mkdocs_site_folder</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">router</span> <span class="o">=</span> <span class="n">APIRouter</span><span class="p">()</span>
@@ -740,5 +728,5 @@ requests to the documentation, which is then located at the site root.</p>
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-02-25 07:45:02.982497+00:00
+Build Date UTC : 2025-02-25 07:58:11.758686+00:00
 -->

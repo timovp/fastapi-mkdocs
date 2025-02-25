@@ -12,8 +12,7 @@ def setup_application(app: FastAPI, docs_route: str | None = None) -> None:
 
     Args:
         app (FastAPI): The FastAPI app object.
-        docs_route (str | None): The route to the documentation, if none provided,
-        it will be at the root. Defaults to "documentation".
+        docs_route (str | None): The route to the documentation, if none provided, it will be at the root. Defaults to "documentation".
     """
     extra_routers = FastAPIMkDocs(docs_route)
     app.include_router(extra_routers.router)

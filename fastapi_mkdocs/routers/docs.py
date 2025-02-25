@@ -29,12 +29,9 @@ class FastAPIMkDocs:
         requests to the documentation, which is then located at the site root.
 
         Args:
-            doc_route (str): The route to the documentation, if none provided, it will
-            be at the root.
-            mkdocs_site_folder (str): The location of the gerenated MkDocs site-folder.
-            Defaults to "./site".
-            mkdocs_favicon_location (str): The location of the favicon of the MkDocs
-            site. Defaults to "./site/img/favicon.ico".
+            doc_route (str): The route to the documentation, if none provided, it will be at the root.
+            mkdocs_site_folder (str): The location of the gerenated MkDocs site-folder. Defaults to "./site".
+            mkdocs_favicon_location (str): The location of the favicon of the MkDocs site. Defaults to "./site/img/favicon.ico".
         """
         self.templates_docs = Jinja2Templates(mkdocs_site_folder)
         self.router = APIRouter()
