@@ -7,8 +7,10 @@ requires-python = ">=3.11"
 dependencies = [
     "fastapi[standard]>=0.115.7",
     "mkdocs>=1.6.1",
+    "mkdocs-autorefs>=1.4.0",
     "mkdocstrings>=0.27.0",
     "mkdocstrings-python>=1.13.0",
+    "pre-commit>=4.1.0",
 ]
 [tool.ruff]
 target-version = "py311"

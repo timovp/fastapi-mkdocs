@@ -1,5 +1,6 @@
 """Example usage of the fastapi_mkdocs package."""
 
+import uvicorn
 from fastapi import FastAPI
 
 from fastapi_mkdocs.core import setup_application
@@ -15,3 +16,7 @@ setup_application(app, docs_route="/docs")
 def read_root() -> dict:
     """Return a simple JSON response."""
     return {"Hello": "World"}
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)

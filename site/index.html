@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" />
       <link rel="shortcut icon" href="img/favicon.ico" />
-    <title>My Docs</title>
+    <title>FastAPIMKDocs</title>
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/theme_extra.css" />
         <link href="assets/_mkdocstrings.css" rel="stylesheet" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "index";
+        var mkdocs_page_name = "documentation";
         var mkdocs_page_input_path = "index.md";
         var mkdocs_page_url = null;
       </script>
@@ -28,13 +28,13 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href="." class="icon icon-home"> My Docs
+          <a href="." class="icon icon-home"> FastAPIMKDocs
         </a>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">index</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">documentation</a>
     <ul class="current">
     </ul>
                 </li>
@@ -46,14 +46,14 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href=".">My Docs</a>
+          <a href=".">FastAPIMKDocs</a>
         
       </nav>
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">index</li>
+      <li class="breadcrumb-item active">documentation</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -123,12 +123,12 @@
             </li>
             <li>
               <b><code>docs_route</code></b>
-                  (<code>str | None</code>, default:
+                  (<code><span title="str">str</span> | None</code>, default:
                       <code>None</code>
 )
               –
               <div class="doc-md-description">
-                <p>The route to the documentation, if none provided,</p>
+                <p>The route to the documentation, if none provided, it will be at the root. Defaults to "documentation".</p>
               </div>
             </li>
         </ul>
@@ -148,16 +148,14 @@
 <span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">setup_application</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">docs_route</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">setup_application</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">docs_route</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Adjust settings on a FastAPI `app` object and add routes.</span>
 
 <span class="sd">    Adds a FastAPI MkDocs router to the FastAPI `app` object.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        app (FastAPI): The FastAPI app object.</span>
-<span class="sd">        docs_route (str | None): The route to the documentation, if none provided,</span>
-<span class="sd">        it will be at the root. Defaults to &quot;documentation&quot;.</span>
+<span class="sd">        docs_route (str | None): The route to the documentation, if none provided, it will be at the root. Defaults to &quot;documentation&quot;.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">extra_routers</span> <span class="o">=</span> <span class="n">FastAPIMkDocs</span><span class="p">(</span><span class="n">docs_route</span><span class="p">)</span>
     <span class="n">app</span><span class="o">.</span><span class="n">include_router</span><span class="p">(</span><span class="n">extra_routers</span><span class="o">.</span><span class="n">router</span><span class="p">)</span>
@@ -474,7 +472,7 @@ requests to the documentation, which is then located at the site root.</p>
         <ul class="first simple">
             <li>
               <b><code>doc_route</code></b>
-                  (<code>str</code>)
+                  (<code><span title="str">str</span></code>)
               –
               <div class="doc-md-description">
                 <p>The route to the documentation, if none provided, it will be at the root.</p>
@@ -482,7 +480,7 @@ requests to the documentation, which is then located at the site root.</p>
             </li>
             <li>
               <b><code>mkdocs_site_folder</code></b>
-                  (<code>str</code>, default:
+                  (<code><span title="str">str</span></code>, default:
                       <code>&#39;./site&#39;</code>
 )
               –
@@ -492,7 +490,7 @@ requests to the documentation, which is then located at the site root.</p>
             </li>
             <li>
               <b><code>mkdocs_favicon_location</code></b>
-                  (<code>str</code>, default:
+                  (<code><span title="str">str</span></code>, default:
                       <code>&#39;./site/img/favicon.ico&#39;</code>
 )
               –
@@ -720,13 +718,11 @@ requests to the documentation, which is then located at the site root.</p>
     <script>
         jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
+        }); </script>
 
 </body>
 </html>
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-02-25 07:58:11.758686+00:00
 -->
